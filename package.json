@@ -1,7 +1,7 @@
 {
   "name": "animaprime",
-  "version": "1.0.0",
-  "description": "CSS compiler for the AnimaPrime system",
+  "version": "0.0.1",
+  "description": "CSS compiler for the Anima Prime system",
   "scripts": {
     "build": "gulp",
     "compile": "gulp css",
@@ -11,8 +11,8 @@
   "browserslist": [
     "last 3 versions"
   ],
-  "author": "John Doe",
-  "license": "MIT",
+  "author": "linxcat",
+  "license": "CC SA 3.0",
   "private": true,
   "dependencies": {
     "gulp": "^4.0.2",
