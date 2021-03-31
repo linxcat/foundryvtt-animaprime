@@ -1,0 +1,126 @@
+{
+  "Actor": {
+      "types": [
+          "GM",
+          "character",
+          "adversity",
+          "eidolon"
+      ],
+      "templates": {
+          "avatar": {
+              "awesome_tokens": {
+                  "min": 0,
+                  "value": 0,
+                  "max": 10
+              }
+          },
+          "combatant": {
+              "pools": {
+                  "action": {
+                      "min": 0,
+                      "value": 10,
+                      "max": 10
+                  },
+                  "strike": {
+                      "min": 0,
+                      "value": 0,
+                      "max": 20
+                  },
+                  "charge": {
+                      "min": 0,
+                      "value": 0,
+                      "max": 6
+                  }
+              },
+              "wounds": {
+                  "min": 0,
+                  "value": 3,
+                  "max": 4
+              },
+              "defense": {
+                  "min": 1,
+                  "value": 2
+              },
+              "skills": [],
+              "powers": [],
+              "conditions": []
+          },
+          "individual": {
+              "name": "",
+              "appearance": ""
+          },
+          "monster": {
+              "weakness": "",
+              "type": ""
+          }
+      },
+      "GM": {
+          "templates": ["avatar"]
+      },
+      "character": {
+          "templates": ["avatar", "individual", "combatant"],
+          "passion": {},
+          "traits": [],
+          "mark": "",
+          "background": "",
+          "links": []
+      },
+      "adversity": {
+          "templates": ["individual", "combatant", "monster"]
+      },
+      "eidolon": {
+          "templates": ["individual", "combatant", "monster"],
+          "level": 0,
+          "entrance": ""
+      }
+  },
+  "Item": {
+      "types": [
+          "skill",
+          "trait",
+          "power",
+          "condition",
+          "soulboundweapon",
+          "achievement",
+          "goal",
+          "countdowndie"
+      ],
+      "templates": {
+      },
+      "skill": {
+          "name": "",
+          "bonus": 0,
+          "marked": false
+      },
+      "trait": {
+          "description": "",
+          "marked": false
+      },
+      "power": {
+          "type": "",
+          "description": "",
+          "cost": 0
+      },
+      "condition": {
+          "name": "",
+          "description": ""
+      },
+      "soulboundweapon": {
+          "name": "",
+          "slots": {
+              "min": 1,
+              "value": 1,
+              "max": 4
+          },
+          "powers": [],
+          "effects": [],
+          "equipped": true
+      },
+      "achievement": {
+      },
+      "goal": {
+      },
+      "countdowndie": {
+      }
+  }
+}

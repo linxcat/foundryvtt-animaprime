@@ -1,0 +1,34 @@
+{
+  "name": "animaprime",
+  "title": "Anima Prime",
+  "description": "A Foundry VTT game system for <a href=\"http://www.animaprimerpg.com/main/docs/Anima_Prime_CC_04-07-2011.pdf\">Anima Prime</a> by Christian Griffen.",
+  "version": "0.0.1",
+  "minimumCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.9",
+  "templateVersion": 2,
+  "author": "John Doe",
+  "esmodules": ["module/animaprime.js"],
+  "styles": [
+    "css/animaprime.css"
+  ],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "",
+  "primaryTokenAttribute": null,
+  "secondaryTokenAttribute": null,
+  "url": "https://github.com/linxcat/foundryvtt-animaprime",
+  "manifest": "https://raw.githubusercontent.com/linxcat/foundryvtt-animaprime/master/src/system.json",
+  "download": "https://github.com/linxcat/foundryvtt-animaprime/raw/v0.0.1/package/animaprime-v0.0.1.zip",
+  "license": "CC SA 3.0",
+  "readme": "https://github.com/linxcat/foundryvtt-animaprime/blob/master/README.md",
+  "bugs": "https://github.com/linxcat/foundryvtt-animaprime/issues/new/choose",
+  "changelog": "https://github.com/linxcat/foundryvtt-animaprime/blob/master/CHANGELOG.md"
+}
