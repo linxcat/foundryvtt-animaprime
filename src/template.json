@@ -41,8 +41,6 @@
                   "min": 1,
                   "value": 2
               },
-              "skills": [],
-              "powers": [],
               "conditions": []
           },
           "individual": {
@@ -60,13 +58,48 @@
       "character": {
           "templates": ["avatar", "individual", "combatant"],
           "passion": {},
-          "traits": [],
+          "traits": {
+              "1": {
+                  "marked": false,
+                  "description": ""
+              },
+              "2": {
+                  "marked": false,
+                  "description": ""
+              },
+              "3": {
+                  "marked": false,
+                  "description": ""
+              }
+          },
+          "skills": {
+              "1": {
+                  "marked": false,
+                  "name": "",
+                  "bonus": 4
+              },
+              "2": {
+                  "marked": false,
+                  "name": "",
+                  "bonus": 3
+              },
+              "3": {
+                  "marked": false,
+                  "name": "",
+                  "bonus": 2
+              }
+          },
+          "concept": "",
           "mark": "",
           "background": "",
-          "links": []
+          "links": ""
       },
       "adversity": {
-          "templates": ["individual", "combatant", "monster"]
+          "templates": ["individual", "combatant", "monster"],
+          "skill": {
+              "name": "",
+              "bonus": 3
+          }
       },
       "eidolon": {
           "templates": ["individual", "combatant", "monster"],
@@ -76,8 +109,6 @@
   },
   "Item": {
       "types": [
-          "skill",
-          "trait",
           "power",
           "condition",
           "soulboundweapon",
@@ -87,17 +118,9 @@
       ],
       "templates": {
       },
-      "skill": {
-          "name": "",
-          "bonus": 0,
-          "marked": false
-      },
-      "trait": {
-          "description": "",
-          "marked": false
-      },
       "power": {
           "type": "",
+          "name": "",
           "description": "",
           "cost": 0
       },

@@ -21,14 +21,14 @@ export class AnimaPrimeActorSheet extends ActorSheet {
   getData() {
     const data = super.getData();
     data.dtypes = ["String", "Number", "Boolean"];
-    for (let attr of Object.values(data.data.attributes)) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-    }
+    // for (let attr of Object.values(data.data.attributes)) {
+    //   attr.isCheckbox = attr.dtype === "Boolean";
+    // }
 
-    // Prepare items.
-    if (this.actor.data.type == 'character') {
-      this._prepareCharacterItems(data);
-    }
+    // // Prepare items.
+    // if (this.actor.data.type == 'character') {
+    //   this._prepareCharacterItems(data);
+    // }
 
     return data;
   }

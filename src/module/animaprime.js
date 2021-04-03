@@ -12,15 +12,6 @@ Hooks.once('init', async function() {
     rollItemMacro
   };
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  CONFIG.Combat.initiative = {
-    formula: "1d20 + @abilities.dex.mod",
-    decimals: 2
-  };
-
   // Define custom Entity classes
   CONFIG.Actor.entityClass = AnimaPrimeActor;
   CONFIG.Item.entityClass = AnimaPrimeItem;
