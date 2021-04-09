@@ -1,149 +1,176 @@
 {
-  "Actor": {
+   "Actor": {
       "types": [
-          "GM",
-          "character",
-          "adversity",
-          "eidolon"
+         "GM",
+         "character",
+         "adversity",
+         "eidolon"
       ],
       "templates": {
-          "avatar": {
-              "awesome_tokens": {
+         "avatar": {
+            "awesome_tokens": {
+               "min": 0,
+               "value": 0,
+               "max": 10
+            }
+         },
+         "combatant": {
+            "pools": {
+               "action": {
+                  "min": 0,
+                  "value": 10,
+                  "max": 10
+               },
+               "strike": {
+                  "min": 0,
+                  "value": 0
+               },
+               "charge": {
                   "min": 0,
                   "value": 0,
-                  "max": 10
-              }
-          },
-          "combatant": {
-              "pools": {
-                  "action": {
-                      "min": 0,
-                      "value": 10,
-                      "max": 10
-                  },
-                  "strike": {
-                      "min": 0,
-                      "value": 0,
-                      "max": 20
-                  },
-                  "charge": {
-                      "min": 0,
-                      "value": 0,
-                      "max": 6
-                  }
-              },
-              "wounds": {
-                  "min": 0,
-                  "value": 3,
-                  "max": 4
-              },
-              "defense": {
-                  "min": 1,
-                  "value": 2
-              },
-              "conditions": []
-          },
-          "individual": {
-              "name": "",
-              "appearance": ""
-          },
-          "monster": {
-              "weakness": "",
-              "type": ""
-          }
+                  "max": 6
+               }
+            },
+            "caps": {
+               "maneuverspend": 3,
+               "solomaneuverearn": 5,
+               "combinedmaneuverearn": 5,
+               "strikespend": 6,
+               "achievementspend": 6
+            },
+            "wounds": {
+               "min": 0,
+               "value": 3,
+               "max": 3
+            },
+            "defense": {
+               "min": 1,
+               "value": 2
+            },
+            "conditions": []
+         },
+         "individual": {
+            "name": "",
+            "appearance": ""
+         },
+         "monster": {
+            "weakness": "",
+            "type": ""
+         }
       },
       "GM": {
-          "templates": ["avatar"]
+         "templates": [
+            "avatar"
+         ]
       },
       "character": {
-          "templates": ["avatar", "individual", "combatant"],
-          "passion": {},
-          "traits": {
-              "1": {
-                  "marked": false,
-                  "description": ""
-              },
-              "2": {
-                  "marked": false,
-                  "description": ""
-              },
-              "3": {
-                  "marked": false,
-                  "description": ""
-              }
-          },
-          "skills": {
-              "1": {
-                  "marked": false,
-                  "name": "",
-                  "bonus": 4
-              },
-              "2": {
-                  "marked": false,
-                  "name": "",
-                  "bonus": 3
-              },
-              "3": {
-                  "marked": false,
-                  "name": "",
-                  "bonus": 2
-              }
-          },
-          "concept": "",
-          "mark": "",
-          "background": "",
-          "links": ""
+         "templates": [
+            "avatar",
+            "individual",
+            "combatant"
+         ],
+         "passion": {},
+         "traits": {
+            "1": {
+               "marked": false,
+               "description": "Trait 1"
+            },
+            "2": {
+               "marked": false,
+               "description": "Trait 2"
+            },
+            "3": {
+               "marked": false,
+               "description": "Trait 3"
+            }
+         },
+         "skills": {
+            "1": {
+               "marked": false,
+               "name": "Skill +4",
+               "bonus": 4
+            },
+            "2": {
+               "marked": false,
+               "name": "Skill +3",
+               "bonus": 3
+            },
+            "3": {
+               "marked": false,
+               "name": "Skill +2",
+               "bonus": 2
+            }
+         },
+         "concept": "",
+         "mark": "",
+         "background": "",
+         "links": ""
       },
       "adversity": {
-          "templates": ["individual", "combatant", "monster"],
-          "skill": {
-              "name": "",
-              "bonus": 3
-          }
+         "templates": [
+            "individual",
+            "combatant",
+            "monster"
+         ],
+         "skill": {
+            "name": "",
+            "bonus": 3
+         }
       },
       "eidolon": {
-          "templates": ["individual", "combatant", "monster"],
-          "level": 0,
-          "entrance": ""
+         "templates": [
+            "individual",
+            "combatant",
+            "monster"
+         ],
+         "level": 0,
+         "entrance": ""
       }
-  },
-  "Item": {
+   },
+   "Item": {
       "types": [
-          "power",
-          "condition",
-          "soulboundweapon",
-          "achievement",
-          "goal",
-          "countdowndie"
+         "passivepower",
+         "chargepower",
+         "condition",
+         "soulboundweapon",
+         "goal",
+         "countdowndie"
       ],
       "templates": {
+         "general": {
+            "name": "",
+            "description": ""
+         }
       },
-      "power": {
-          "type": "",
-          "name": "",
-          "description": "",
-          "cost": 0
+      "passivepower": {
+         "templates": [
+            "general"
+         ]
+      },
+      "chargepower": {
+         "templates": [
+            "general"
+         ],
+         "type": "",
+         "cost": 0
       },
       "condition": {
-          "name": "",
-          "description": ""
+         "templates": [
+            "general"
+         ]
       },
       "soulboundweapon": {
-          "name": "",
-          "slots": {
-              "min": 1,
-              "value": 1,
-              "max": 4
-          },
-          "powers": [],
-          "effects": [],
-          "equipped": true
+         "name": "",
+         "slots": {
+            "min": 1,
+            "value": 1,
+            "max": 4
+         },
+         "powers": [],
+         "effects": [],
+         "equipped": true
       },
-      "achievement": {
-      },
-      "goal": {
-      },
-      "countdowndie": {
-      }
-  }
+      "goal": {},
+      "countdowndie": {}
+   }
 }

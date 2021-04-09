@@ -8,7 +8,7 @@
       </div>
       <div class="concept">
         <label for="data.concept" class="resource-label">Concept</label>
-        <input type="text" name="concept" value="{{data.concept}}" data-dtype="String"/>
+        <input type="text" name="data.concept" value="{{data.concept}}" data-dtype="String"/>
       </div>
       <div class="passion">
         <label for="data.passion" class="resource-label">Passion</label>
@@ -16,65 +16,67 @@
       </div>
       <div class="mark">
         <label for="data.mark" class="resource-label">Mark</label>
-        <input type="text" name="mark" value="{{data.mark}}" data-dtype="String"/>
+        <input type="text" name="data.mark" value="{{data.mark}}" data-dtype="String"/>
       </div>
     </div>
   </section>
+
   <section>
-      <div class="trait-list">
-        <h2>Traits</h2>
-        <ol class="traits">
-          {{#each data.trait as |trait id|}}
-          <li class="trait flexrow flex-left" data-item-id="{{id}}">
-            <div class="trait-item flexrow flex-left">
-              <input type="checkbox" name="trait-marked" data-dtype="Boolean" {{checked trait.marked}}/>
-              <input type="text" name="trait-name" value="{{trait}}" data-dtype="String"/>
-            </div>
-          </li>
-          {{/each}}
-        </ol>
-      </div>
-      <div class="tracking grid grid-2col">
-        <div class="skill-list">
-          <h2>Skills</h2>
-          <ol class="skills">
-            {{#each data.skill as |skill id|}}
-            <li class="skill flexrow flex-left" data-item-id="{{id}}">
-              <div class="skill-item flexrow flex-left">
-                <input type="checkbox" name="skill-marked" data-dtype="Boolean" {{checked skill.marked}}/>
-                <input type="text" name="skill-name" value="{{skill}}" data-dtype="String"/>
-              </div>
-            </li>
-            {{/each}}
-          </ol>
-        </div>
-        <div class="survival grid grid-2col">
-          <div class="wounds flexcol flex-center">
-            <h2>Wounds</h2>
-            <h1 class="wounds-value"><input name="wounds" type="text" value="{{data.wounds.value}}"/></h1>
+    <div class="trait-list">
+      <h2>Traits</h2>
+      <ol class="traits">
+        {{#each data.traits as |trait id|}}
+        <li class="trait flexrow" data-item-id="{{id}}">
+          <div class="trait-item flexrow">
+            <input type="checkbox" name="data.traits.{{id}}.marked" data-dtype="Boolean" {{checked trait.marked}}/>
+            <input type="text" name="data.traits.{{id}}.description" value="{{trait.description}}" data-dtype="String"/>
           </div>
-          <div class="defense flexcol flex-center">
-            <h2>Defense</h2>
-            <h1 class="defense-value"><input name="defense" type="text" value="{{data.defense.value}}"/></h1>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+    <div class="skill-list">
+      <h2>Skills</h2>
+      <ol class="skills">
+        {{#each data.skills as |skill id|}}
+        <li class="skill flexrow" data-item-id="{{id}}">
+          <div class="skill-item flexrow">
+            <input type="checkbox" name="data.skills.{{id}}.marked" data-dtype="Boolean" {{checked skill.marked}}/>
+            <input type="text" name="data.skills.{{id}}.name" value="{{skill.name}}" data-dtype="String"/>
           </div>
-        </div>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+    <div class="survival grid grid-2col">
+      <div class="wounds flexcol flex-center">
+        <h2>Wounds</h2>
+        <h1 class="wounds-value"><input name="data.wounds.value" type="number" value="{{data.wounds.value}}"/></h1>
       </div>
-      <div class="pool-counts grid grid-3col">
-        <div class="action-pool flexcol flex-center">
-          <h1>Action</h1>
-          <h1 class="action-dice"><input name="action" type="text" value="{{data.pools.action.value}}"/></h1>
-        </div>
-        <div class="strike-pool flexcol flex-center">
-          <h1>Strike</h1>
-          <h1 class="strike-dice"><input name="strike" type="text" value="{{data.pools.strike.value}}"/></h1>
-        </div>
-        <div class="charge-pool flexcol flex-center">
-          <h1>Charge</h1>
-          <h1 class="charge-dice"><input name="charge" type="text" value="{{data.pools.charge.value}}"/></h1>
-        </div>
+      <div class="defense flexcol flex-center">
+        <h2>Defense</h2>
+        <h1 class="defense-value"><input name="data.defense.value" type="number" value="{{data.defense.value}}"/></h1>
+      </div>
+    </div>
+    <div class="pool-counts grid grid-3col">
+      <div class="action-pool flexcol flex-center">
+        <h1>Action</h1>
+        <h1 class="action-dice"><input name="data.pools.action.value" type="number" value="{{data.pools.action.value}}"/></h1>
+        <button type="button">Maneuver</button>
+      </div>
+      <div class="strike-pool flexcol flex-center">
+        <h1>Strike</h1>
+        <h1 class="strike-dice"><input name="data.pools.strike.value" type="number" value="{{data.pools.strike.value}}"/></h1>
+        <button type="button">Strike</button>
+        <button type="button">Achievement</button>
+      </div>
+      <div class="charge-pool flexcol flex-center">
+        <h1>Charge</h1>
+        <h1 class="charge-dice"><input name="data.pools.charge.value" type="number" value="{{data.pools.charge.value}}"/></h1>
       </div>
     </div>
   </section>
+
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="powers">Powers</a>
     <a class="item" data-tab="conditions">Conditions</a>
@@ -84,8 +86,18 @@
   <section class="sheet-body">
     <div class="tab powers" data-group="primary" data-tab="powers">
       <ol class="powers-list">
-        {{#each actor.powers as |power id|}}
-        <li class="power flexrow flex-left" data-item-id="{{power._id}}">
+        {{#each actor.chargepowers as |power id|}}
+        <li class="power flexrow" data-item-id="{{power._id}}">
+          <div class="power-image"><img src="{{power.img}}" title="{{power.name}}" width="24" height="24"/></div>
+            <h4 class="power-name">{{power.name}}</h4>
+            <div class="power-controls">
+              <a class="power-control item-edit" title="Edit Power"><i class="fas fa-edit"></i></a>
+              <a class="power-control item-delete" title="Delete Power"><i class="fas fa-trash"></i></a>
+            </div>
+        </li>
+        {{/each}}
+        {{#each actor.passivepowers as |power id|}}
+        <li class="power flexrow" data-item-id="{{power._id}}">
           <div class="power-image"><img src="{{power.img}}" title="{{power.name}}" width="24" height="24"/></div>
             <h4 class="power-name">{{power.name}}</h4>
             <div class="power-controls">
@@ -99,8 +111,8 @@
 
     <div class="tab conditions" data-group="primary" data-tab="conditions">
       <ol class="conditions-list">
-        {{#each actor.conditions as |condition id|}}
-        <li class="condition flexrow flex-left" data-item-id="{{condition._id}}">
+        {{#each data.conditions as |condition id|}}
+        <li class="condition flexrow" data-item-id="{{condition._id}}">
           <div class="condition-image"><img src="{{condition.img}}" title="{{condition.name}}" width="24" height="24"/></div>
             <h4 class="condition-name">{{condition.name}}</h4>
             <div class="condition-controls">
@@ -111,7 +123,7 @@
       </ol>
     </div>
 
-    <div class="tab links-backgrounds flexcol flex-group-left" data-group="primary" data-tab="links-backgrounds">
+    <div class="tab links-backgrounds" data-group="primary" data-tab="links-backgrounds">
       <h3>Links</h3>
       {{editor content=data.links target="data.links" button=true owner=owner editable=editable}}
       <h3>Background</h3>

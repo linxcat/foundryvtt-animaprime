@@ -6,13 +6,28 @@
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
-  "author": "John Doe",
+  "author": "linxcat",
   "esmodules": ["module/animaprime.js"],
   "styles": [
     "css/animaprime.css"
   ],
   "scripts": [],
-  "packs": [],
+  "packs": [
+    {
+      "name": "powers",
+      "label": "Included Powers",
+      "system": "animaprime",
+      "path": "./packs/powers.db",
+      "entity": "Item"
+    },
+    {
+      "name": "conditions",
+      "label": "Included Conditions",
+      "system": "animaprime",
+      "path": "./packs/conditions.db",
+      "entity": "Item"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
